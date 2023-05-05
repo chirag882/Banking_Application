@@ -18,7 +18,7 @@ public class AddUser {
         Success success = new Success();
 
         //--------------NAME--------------------
-        JLabel name = new JLabel("Name : ");
+        JLabel name = new JLabel("Name: ");
         name.setBounds(50, 200, 100, 25);
         name.setFont(txt);
         JTextField nmField = new JTextField();
