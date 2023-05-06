@@ -58,10 +58,11 @@ public class SQLManage {
             str = "Select * from users where card = '" + card + "'";
             Statement stm4 = con.createStatement();
             ResultSet rst = stm4.executeQuery(str);
-            if (rst.next()) {
+            while (rst.next()) {
                 bal = rst.getInt("bal");
+                id = rst.getInt("id");
                 bal += amt;
-                str = "INSERT INTO transactions ( amount, stat, bal) VALUES( " + amt + ", 'dep', " + bal + ")";
+                str = "INSERT INTO transactions ( id, amount, stat, bal) VALUES( " + id + ", " + amt + ", 'dep', " + bal + ")";
                 Statement stm5 = con.createStatement();
                 stm5.executeUpdate(str);
             }
