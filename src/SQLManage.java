@@ -59,7 +59,7 @@ public class SQLManage {
             ResultSet rst = stm4.executeQuery(str);
             bal = rst.getInt("bal");
             bal += amt;
-            str = "INSERT INTO transactions (id, amount, stat, bal) VALUES("+id+", "+amt+", 'dep', "+bal+")";
+            str = "INSERT INTO transactions ( amount, stat, bal) VALUES( "+amt+", 'dep', "+bal+")";
             Statement stm5 = con.createStatement();
             stm5.executeUpdate(str);
             return 1;
