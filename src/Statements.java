@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -9,6 +11,7 @@ public class Statements {
     public void stateView(int id) throws SQLException {
         DefaultTableModel model = new DefaultTableModel();
         Commons commons = new Commons();
+        Home home = new Home();
         JFrame frame = (JFrame)commons.Frame();
         SQLManage manage = new SQLManage();
 
@@ -58,7 +61,22 @@ public class Statements {
             i++;
         }
         //-----------------------------------------------------
+        //------------------BACK-----------------------
+        JButton bk = new JButton("BACK");
+        bk.setBounds(200,475,200,50);
+        bk.setFont(new Font("Rockwell", Font.BOLD, 25));
+        frame.add(bk);
+        bk.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                try{
+                    home.homeView(id);
+                    frame.dispose();
+                }catch (SQLException e1){
+                    e1.printStackTrace();
+                }
 
+            }
+        });
         frame.setVisible(true);
     }
 }

@@ -8,7 +8,7 @@ public class Quick {
     public void quickView(int id) throws SQLException {
 
         Operations oper = new Operations();
-
+        Home home = new Home();
         Font txt = new Font("", Font.BOLD, 25);
         Commons commons = new Commons();
         JFrame frame = (JFrame)commons.Frame();
@@ -75,6 +75,22 @@ public class Quick {
             public void mousePressed(MouseEvent e) {
                 oper.withdrawal(10000, id);
                 frame.dispose();
+            }
+        });
+        //------------------BACK-----------------------
+        JButton bk = new JButton("BACK");
+        bk.setBounds(200,475,200,50);
+        bk.setFont(new Font("Rockwell", Font.BOLD, 25));
+        frame.add(bk);
+        bk.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                try{
+                    home.homeView(id);
+                    frame.dispose();
+                }catch (SQLException e1){
+                    e1.printStackTrace();
+                }
+
             }
         });
     }
