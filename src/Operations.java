@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Operations {
@@ -9,6 +12,7 @@ public class Operations {
     SQLManage manage;
     Fail fail;
     Success success;
+    Home home = new Home();
 
     Operations() throws SQLException {
         manage = new SQLManage();
@@ -30,7 +34,22 @@ public class Operations {
         frame.add(label);
         frame.add(card);
         //----------------------------------------------
+        //------------------BACK-----------------------
+        JButton bk = new JButton("BACK");
+        bk.setBounds(200,475,200,50);
+        bk.setFont(new Font("Rockwell", Font.BOLD, 25));
+        frame.add(bk);
+        bk.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                try{
+                    home.homeView(id);
+                    frame.dispose();
+                }catch (SQLException e1){
+                    e1.printStackTrace();
+                }
 
+            }
+        });
         //------------------SUBMIT------------------------
         JButton sbt = new JButton("SUBMIT");
         sbt.setBounds(200, 400, 200, 50);
@@ -72,7 +91,22 @@ public class Operations {
         frame.add(label);
         frame.add(amt);
         //----------------------------------------------
+        //------------------BACK-----------------------
+        JButton bk = new JButton("BACK");
+        bk.setBounds(200,475,200,50);
+        bk.setFont(new Font("Rockwell", Font.BOLD, 25));
+        frame.add(bk);
+        bk.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                try{
+                    home.homeView(id);
+                    frame.dispose();
+                }catch (SQLException e1){
+                    e1.printStackTrace();
+                }
 
+            }
+        });
         //------------------SUBMIT------------------------
         JButton sbt = new JButton("SUBMIT");
         sbt.setBounds(200, 400, 200, 50);
@@ -111,7 +145,22 @@ public class Operations {
         frame.add(label);
         frame.add(amt);
         //----------------------------------------------
+        //------------------BACK-----------------------
+        JButton bk = new JButton("BACK");
+        bk.setBounds(200,475,200,50);
+        bk.setFont(new Font("Rockwell", Font.BOLD, 25));
+        frame.add(bk);
+        bk.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                try{
+                    home.homeView(id);
+                    frame.dispose();
+                }catch (SQLException e1){
+                    e1.printStackTrace();
+                }
 
+            }
+        });
         //------------------SUBMIT------------------------
         JButton sbt = new JButton("SUBMIT");
         sbt.setBounds(200, 400, 200, 50);
@@ -147,6 +196,8 @@ public class Operations {
             }
 
         });
+
+
         //------------------------------------------------
 
         if (str.equals("Balance")){
