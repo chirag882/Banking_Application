@@ -12,6 +12,12 @@ public class Quick {
         Font txt = new Font("", Font.BOLD, 25);
         Commons commons = new Commons();
         JFrame frame = (JFrame)commons.Frame();
+        //----------------LABEL-----------------------
+        JLabel hlabel = new JLabel("QUICK CASH");
+        hlabel.setBounds(0, 200, 575, 30);
+        hlabel.setHorizontalAlignment(JLabel.CENTER);
+        hlabel.setFont(new Font("Rockwell", Font.BOLD, 25));
+        frame.add(hlabel);
         JLabel two = new JLabel("< 200");
         two.setBounds(30, 250, 200, 30);
         two.setFont(txt);
@@ -79,7 +85,7 @@ public class Quick {
         });
         //------------------BACK-----------------------
         JButton bk = new JButton("BACK");
-        bk.setBounds(200,475,200,50);
+        bk.setBounds(200,500,200,50);
         bk.setFont(new Font("Rockwell", Font.BOLD, 25));
         frame.add(bk);
         bk.addMouseListener(new MouseAdapter() {
