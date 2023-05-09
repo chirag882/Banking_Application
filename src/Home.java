@@ -5,35 +5,54 @@ import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
 public class Home {
+
+    public void styleButton(JButton b){
+        b.setOpaque(true);
+        b.setBorderPainted(false);
+        b.setBackground(Color.decode("#28a745"));
+        b.setForeground(Color.white);
+        b.setFont(new Font("Arial", Font.PLAIN, 14));
+        b.setPreferredSize(new Dimension(100, 40));
+        b.setFocusPainted(false);
+    }
     public void homeView(int id) throws SQLException {
         Operations operations = new Operations();
-        Font txt = new Font("", Font.BOLD, 25);
+        Font txt = new Font(Font., Font.BOLD, 25);
         Commons commons = new Commons();
         JFrame frame = (JFrame)commons.Frame();
         JButton quick = new JButton("< Quick Cash");
-        quick.setBounds(30, 250, 200, 30);
+        quick.setBounds(30, 250, 225, 30);
         quick.setFont(txt);
         JButton withdraw = new JButton("Withdraw >");
-        withdraw.setBounds(350, 250, 200, 30);
-        withdraw.setHorizontalAlignment(JLabel.RIGHT);
+        withdraw.setBounds(350, 250, 225, 30);
+//        withdraw.setHorizontalAlignment(JLabel.RIGHT);
         withdraw.setFont(txt);
         JButton deposit = new JButton("< Deposit");
-        deposit.setBounds(30, 350, 200, 30);
+        deposit.setBounds(30, 350, 225, 30);
         deposit.setFont(txt);
         JButton sts = new JButton("Mini Statement >");
-        sts.setBounds(350, 350, 200, 30);
-        sts.setHorizontalAlignment(JLabel.RIGHT);
+        sts.setBounds(350, 350, 225, 30);
+//        sts.setHorizontalAlignment(JLabel.RIGHT);
         sts.setFont(txt);
         JButton bal = new JButton("< Balance Enquiry");
-        bal.setBounds(30, 450, 250, 30);
+        bal.setBounds(30, 450, 225, 30);
         bal.setFont(txt);
         JButton pinchange = new JButton("Change Pin >");
-        pinchange.setBounds(350, 450, 200, 30);
-        pinchange.setHorizontalAlignment(JLabel.RIGHT);
+        pinchange.setBounds(350, 450, 225, 30);
+//        pinchange.setHorizontalAlignment(JLabel.RIGHT);
         pinchange.setFont(txt);
         JButton transfermoney = new JButton("< Transfer Money");
-        transfermoney.setBounds(30, 550, 250, 30);
+        transfermoney.setBounds(30, 550, 225, 30);
         transfermoney.setFont(txt);
+
+        styleButton(quick);
+        styleButton(withdraw);
+        styleButton(deposit);
+        styleButton(sts);
+        styleButton(bal);
+        styleButton(pinchange);
+        styleButton(transfermoney);
+
         frame.add(quick);
         frame.add(withdraw);
         frame.add(deposit);
