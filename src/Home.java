@@ -4,22 +4,60 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
+import static javax.swing.text.StyleConstants.setBackground;
+
 public class Home {
 
-    public void styleButton(JButton b){
-        b.setOpaque(true);
+//    public void styleButton(JButton b){
+//        b.setOpaque(true);
+//        b.setBorderPainted(false);
+//        b.setBackground(Color.decode("#28a745"));
+//        b.setForeground(Color.white);
+//        b.setFont(new Font("Arial", Font.PLAIN, 14));
+//        b.setPreferredSize(new Dimension(100, 40));
+//        b.setFocusPainted(false);
+//    }
+
+
+    public void styleButton(JButton b) {
+        Color bgColor = Color.decode("#28a745");
+        Color hoverColor = new Color(200, 200, 200);
+        Color pressColor = new Color(153, 153, 153);
+        Font font = new Font("Arial", Font.BOLD, 16);
+
+        b.setFont();
         b.setBorderPainted(false);
-        b.setBackground(Color.decode("#28a745"));
-        b.setForeground(Color.white);
-        b.setFont(new Font("Arial", Font.PLAIN, 14));
-        b.setPreferredSize(new Dimension(100, 40));
-        b.setFocusPainted(false);
+        b.setContentAreaFilled(false);
+        b.setOpaque(true);
+        b.setBackground(bgColor);
+        b.setForeground(Color.WHITE);
+        b.setFont(font);
+
+        b.addMouseListener(new MouseAdapter() {
+            public void mouseEntered(MouseEvent e) {
+                b.setBackground(hoverColor);
+            }
+
+            public void mouseExited(MouseEvent e) {
+                b.setBackground(bgColor);
+            }
+
+            public void mousePressed(MouseEvent e) {
+                b.setBackground(pressColor);
+            }
+
+            public void mouseReleased(MouseEvent e) {
+                b.setBackground(hoverColor);
+            }
+        });
     }
+
+
     public void homeView(int id) throws SQLException {
         Operations operations = new Operations();
-        Font txt = new Font(Font., Font.BOLD, 25);
+        Font txt = new Font("", Font.BOLD, 25);
         Commons commons = new Commons();
-        JFrame frame = (JFrame)commons.Frame();
+        JFrame frame = (JFrame) commons.Frame();
         JButton quick = new JButton("< Quick Cash");
         quick.setBounds(30, 250, 225, 30);
         quick.setFont(txt);
@@ -127,8 +165,8 @@ public class Home {
         transfermoney.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 try {
-                    operations.opView2("Transfer",id);
-                }catch (SQLException e1){
+                    operations.opView2("Transfer", id);
+                } catch (SQLException e1) {
                     e1.printStackTrace();
                 }
                 frame.dispose();
