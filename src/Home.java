@@ -10,7 +10,7 @@ public class Home {
 
     public void styleButton(JButton b) {
         Color bgColor = Color.decode("#59043f");
-        Color hoverColor = Color.decode("#e38109");
+        Color hoverColor = Color.decode("#c40a8b");
         Color pressColor = new Color(153, 153, 153);
         Font font = new Font("Arial", Font.BOLD, 16);
 
@@ -31,6 +31,7 @@ public class Home {
             public void mouseExited(MouseEvent e) {
                 b.setBackground(bgColor);
                 b.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+                b.setForeground(Color.WHITE);
 
             }
 
