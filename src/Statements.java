@@ -65,6 +65,8 @@ public class Statements {
         JButton bk = new JButton("BACK");
         bk.setBounds(200,475,200,50);
         bk.setFont(new Font("Rockwell", Font.BOLD, 25));
+        bk.setForeground(Color.WHITE);
+        bk.setBackground(Color.decode("#c22b17"));
         frame.add(bk);
         bk.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {

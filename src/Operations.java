@@ -38,6 +38,8 @@ public class Operations {
         JButton bk = new JButton("BACK");
         bk.setBounds(200,475,200,50);
         bk.setFont(new Font("Rockwell", Font.BOLD, 25));
+        bk.setForeground(Color.WHITE);
+        bk.setBackground(Color.decode("#c22b17"));
         frame.add(bk);
         bk.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
@@ -54,6 +56,8 @@ public class Operations {
         JButton sbt = new JButton("SUBMIT");
         sbt.setBounds(200, 400, 200, 50);
         sbt.setFont(new Font("Rockwell", Font.BOLD, 25));
+        sbt.setBackground(Color.decode("#17c237"));
+
         frame.add(sbt);
         sbt.addActionListener(new ActionListener() {
             @Override
@@ -95,6 +99,9 @@ public class Operations {
         JButton bk = new JButton("BACK");
         bk.setBounds(200,475,200,50);
         bk.setFont(new Font("Rockwell", Font.BOLD, 25));
+        bk.setForeground(Color.WHITE);
+        bk.setBackground(Color.decode("#c22b17"));
+
         frame.add(bk);
         bk.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
@@ -110,7 +117,7 @@ public class Operations {
         //------------------SUBMIT------------------------
         JButton sbt = new JButton("SUBMIT");
         sbt.setBounds(200, 400, 200, 50);
-        sbt.setFont(new Font("Rockwell", Font.BOLD, 25));
+
         frame.add(sbt);
         sbt.addActionListener(new ActionListener() {
             @Override
@@ -149,6 +156,9 @@ public class Operations {
         JButton bk = new JButton("BACK");
         bk.setBounds(200,475,200,50);
         bk.setFont(new Font("Rockwell", Font.BOLD, 25));
+        bk.setForeground(Color.WHITE);
+        bk.setBackground(Color.decode("#c22b17"));
+
         frame.add(bk);
         bk.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
@@ -165,6 +175,7 @@ public class Operations {
         JButton sbt = new JButton("SUBMIT");
         sbt.setBounds(200, 400, 200, 50);
         sbt.setFont(new Font("Rockwell", Font.BOLD, 25));
+        sbt.setBackground(Color.decode("#17c237"));
         frame.add(sbt);
         sbt.addActionListener(new ActionListener() {
             @Override
