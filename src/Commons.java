@@ -17,13 +17,13 @@ public class Commons {
         atm.setFont(new Font("Monospaced", Font.BOLD, 120));
         atm.setForeground(Color.WHITE);
         atm.setOpaque(true);
-        atm.setBackground(Color.decode("#310022"));
+        atm.setBackground(Color.decode("#59043f"));
         JLabel man = new JLabel("MANAGEMENT SYSTEM");
         man.setBounds(0, 100, 600, 30);
         man.setHorizontalAlignment(JLabel.CENTER);
         man.setFont(new Font("Monospaced", Font.BOLD, 20));
         man.setOpaque(true);
-        man.setBackground(Color.decode("#310022"));
+        man.setBackground(Color.decode("#59043f"));
         man.setForeground(Color.WHITE);
         frame.add(man);
         frame.add(atm);
