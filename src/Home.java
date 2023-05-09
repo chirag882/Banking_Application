@@ -25,7 +25,7 @@ public class Home {
         Color pressColor = new Color(153, 153, 153);
         Font font = new Font("Arial", Font.BOLD, 16);
 
-        b.setFont();
+        b.setForeground(Color.WHITE);
         b.setBorderPainted(false);
         b.setContentAreaFilled(false);
         b.setOpaque(true);
@@ -36,10 +36,13 @@ public class Home {
         b.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent e) {
                 b.setBackground(hoverColor);
+                b.setCursor(new Cursor(Cursor.HAND_CURSOR));
             }
 
             public void mouseExited(MouseEvent e) {
                 b.setBackground(bgColor);
+                b.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+
             }
 
             public void mousePressed(MouseEvent e) {
