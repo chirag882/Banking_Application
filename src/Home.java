@@ -9,8 +9,8 @@ import static javax.swing.text.StyleConstants.setBackground;
 public class Home {
 
     public void styleButton(JButton b) {
-        Color bgColor = Color.decode("#310022");
-        Color hoverColor = new Color(200, 200, 200);
+        Color bgColor = Color.decode("#59043f");
+        Color hoverColor = Color.decode("#e38109");
         Color pressColor = new Color(153, 153, 153);
         Font font = new Font("Arial", Font.BOLD, 16);
 
