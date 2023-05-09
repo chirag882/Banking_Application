@@ -8,19 +8,8 @@ import static javax.swing.text.StyleConstants.setBackground;
 
 public class Home {
 
-//    public void styleButton(JButton b){
-//        b.setOpaque(true);
-//        b.setBorderPainted(false);
-//        b.setBackground(Color.decode("#28a745"));
-//        b.setForeground(Color.white);
-//        b.setFont(new Font("Arial", Font.PLAIN, 14));
-//        b.setPreferredSize(new Dimension(100, 40));
-//        b.setFocusPainted(false);
-//    }
-
-
     public void styleButton(JButton b) {
-        Color bgColor = Color.decode("#28a745");
+        Color bgColor = Color.decode("#310022");
         Color hoverColor = new Color(200, 200, 200);
         Color pressColor = new Color(153, 153, 153);
         Font font = new Font("Arial", Font.BOLD, 16);
