@@ -82,7 +82,7 @@ public class Operations {
         Font txt = new Font("", Font.BOLD, 15);
 
         //-----------------AMOUNT/PIN------------------
-        JLabel label = new JLabel("Enter the " + str);
+        JLabel label = new JLabel("Enter the amonut: " );
         label.setBounds(50, 270, 250, 20);
         label.setFont(txt);
         JTextField amt = new JTextField();
