@@ -24,6 +24,13 @@ public class Operations {
         JFrame frame = (JFrame) commons.Frame();
         Font txt = new Font("", Font.BOLD, 15);
 
+        //----------------LABEL-----------------------
+        JLabel hlabel = new JLabel("TRANSACTION");
+        hlabel.setBounds(0, 200, 575, 30);
+        hlabel.setHorizontalAlignment(JLabel.CENTER);
+        hlabel.setFont(new Font("Rockwell", Font.BOLD, 25));
+        frame.add(hlabel);
+
         //-----------------AMOUNT/PIN------------------
         JLabel label = new JLabel("Enter the card number: ");
         label.setBounds(50, 270, 250, 20);
@@ -54,7 +61,7 @@ public class Operations {
         });
         //------------------SUBMIT------------------------
         JButton sbt = new JButton("SUBMIT");
-        sbt.setBounds(200, 400, 200, 50);
+        sbt.setBounds(200, 420, 200, 50);
         sbt.setFont(new Font("Rockwell", Font.BOLD, 25));
         sbt.setBackground(Color.decode("#17c237"));
 
@@ -84,6 +91,10 @@ public class Operations {
         Commons commons = new Commons();
         JFrame frame = (JFrame) commons.Frame();
         Font txt = new Font("", Font.BOLD, 15);
+
+
+
+
 
         //-----------------AMOUNT/PIN------------------
         JLabel label = new JLabel("Enter the amonut: " );
@@ -117,7 +128,7 @@ public class Operations {
         //------------------SUBMIT------------------------
         JButton sbt = new JButton("SUBMIT");
         sbt.setBounds(200, 400, 200, 50);
-
+        sbt.setFont(new Font("Rockwell", Font.BOLD, 25));
         frame.add(sbt);
         sbt.addActionListener(new ActionListener() {
             @Override
@@ -141,6 +152,22 @@ public class Operations {
         Commons commons = new Commons();
         JFrame frame = (JFrame)commons.Frame();
         Font txt = new Font("", Font.BOLD, 15);
+
+        //----------------LABEL-----------------------
+        JLabel hlabel = new JLabel();
+        if(str.equals("Withdraw Amount")) {
+            hlabel = new JLabel("WITHDRAW");
+        }else if(str.equals("Deposit Amount")){
+            hlabel = new JLabel("DEPOSIT");
+        }else if(str.equals("New PIN")){
+            hlabel = new JLabel("PIN");
+        }else if(str.equals("Balance")){
+            hlabel = new JLabel("BALANCE");
+        }
+        hlabel.setBounds(0, 200, 575, 30);
+        hlabel.setHorizontalAlignment(JLabel.CENTER);
+        hlabel.setFont(new Font("Rockwell", Font.BOLD, 25));
+        frame.add(hlabel);
 
         //-----------------AMOUNT/PIN------------------
         JLabel label = new JLabel("Enter the " + str);
@@ -173,7 +200,7 @@ public class Operations {
         });
         //------------------SUBMIT------------------------
         JButton sbt = new JButton("SUBMIT");
-        sbt.setBounds(200, 400, 200, 50);
+        sbt.setBounds(200, 420, 200, 50);
         sbt.setFont(new Font("Rockwell", Font.BOLD, 25));
         sbt.setBackground(Color.decode("#17c237"));
         frame.add(sbt);
