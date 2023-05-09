@@ -8,6 +8,12 @@ import java.sql.SQLException;
 
 
 public class Statements {
+
+    public void styleButton(JButton b) {
+        Font font = new Font("Arial", Font.BOLD, 16);
+        b.setFont(font);
+        
+    }
     public void stateView(int id) throws SQLException {
         DefaultTableModel model = new DefaultTableModel();
         Commons commons = new Commons();
@@ -65,6 +71,7 @@ public class Statements {
         JButton bk = new JButton("BACK");
         bk.setBounds(200,475,200,50);
         bk.setFont(new Font("Rockwell", Font.BOLD, 25));
+        styleButton(bk);
         bk.setForeground(Color.WHITE);
         bk.setBackground(Color.decode("#c22b17"));
         frame.add(bk);
