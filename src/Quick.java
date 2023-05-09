@@ -7,8 +7,56 @@ import java.sql.SQLException;
 public class Quick {
 
     public void styleButton(JButton b) {
+        Color bgColor = Color.decode("#59043f");
+        Color hoverColor = Color.decode("#c40a8b");
+        Color pressColor = new Color(153, 153, 153);
+        Font font = new Font("Arial", Font.BOLD, 16);
+
+        b.setForeground(Color.WHITE);
+        b.setBorderPainted(false);
+        b.setContentAreaFilled(false);
+        b.setOpaque(true);
+        b.setBackground(bgColor);
+        b.setForeground(Color.WHITE);
+        b.setFont(font);
+
+        b.addMouseListener(new MouseAdapter() {
+            public void mouseEntered(MouseEvent e) {
+                b.setBackground(hoverColor);
+                b.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+
+            public void mouseExited(MouseEvent e) {
+                b.setBackground(bgColor);
+                b.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+                b.setForeground(Color.WHITE);
+
+            }
+
+            public void mousePressed(MouseEvent e) {
+                b.setBackground(pressColor);
+            }
+
+            public void mouseReleased(MouseEvent e) {
+                b.setBackground(hoverColor);
+            }
+        });
+    }
+
+    public void styleButton_1(JButton b) {
         Font font = new Font("Arial", Font.BOLD, 16);
         b.setFont(font);
+
+        b.addMouseListener(new MouseAdapter() {
+            public void mouseEntered(MouseEvent e) {
+                b.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+
+            public void mouseExited(MouseEvent e) {
+                b.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+            }
+
+        });
     }
     public void quickView(int id) throws SQLException {
 
@@ -98,7 +146,7 @@ public class Quick {
         JButton bk = new JButton("BACK");
         bk.setBounds(200,500,200,50);
         bk.setFont(new Font("Rockwell", Font.BOLD, 25));
-        styleButton(bk);
+        styleButton_1(bk);
         bk.setForeground(Color.WHITE);
         bk.setBackground(Color.decode("#c22b17"));
         frame.add(bk);

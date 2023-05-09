@@ -12,7 +12,16 @@ public class Statements {
     public void styleButton(JButton b) {
         Font font = new Font("Arial", Font.BOLD, 16);
         b.setFont(font);
-        
+        b.addMouseListener(new MouseAdapter() {
+            public void mouseEntered(MouseEvent e) {
+                b.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+
+            public void mouseExited(MouseEvent e) {
+                b.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+            }
+
+        });
     }
     public void stateView(int id) throws SQLException {
         DefaultTableModel model = new DefaultTableModel();

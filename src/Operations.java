@@ -23,6 +23,17 @@ public class Operations {
     public void styleButton(JButton b) {
         Font font = new Font("Arial", Font.BOLD, 16);
         b.setFont(font);
+
+        b.addMouseListener(new MouseAdapter() {
+            public void mouseEntered(MouseEvent e) {
+                b.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+
+            public void mouseExited(MouseEvent e) {
+                b.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+            }
+
+        });
     }
     public void opView2(String str, int id) throws SQLException {
         Commons commons = new Commons();
