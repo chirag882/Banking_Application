@@ -5,7 +5,7 @@ public class SQLManage {
 
     SQLManage() throws SQLException {
         String usr = "root";
-        String pass = "MySqlPassword";
+        String pass = "Mumbai2020@";
         String url = "jdbc:mysql://localhost:3306/atm";
         con = DriverManager.getConnection(url, usr, pass);
     }

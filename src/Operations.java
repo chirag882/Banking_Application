@@ -247,7 +247,7 @@ public class Operations {
                 else if(str.equals("New PIN")){
                     try {
                         manage.pinchange(amt.getText(), id);
-                        success.successView(id);
+                        success.successViewPin(id);
                         frame.dispose();
                     }
                     catch (SQLException e1) {

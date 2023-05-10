@@ -18,6 +18,21 @@ public class Success {
         home.homeView(id);
         frame.setVisible(true);
     }
+    public void successViewPin(int id) throws SQLException {
+        Home home = new Home();
+        Commons commons = new Commons();
+        JFrame frame =(JFrame) commons.Frame();
+
+        //-----------------SUCCESS------------------
+        JLabel sucss = new JLabel("Pin Changed Successfully.");
+        sucss.setBounds(0, 280, 600, 50);
+        sucss.setHorizontalAlignment(JLabel.CENTER);
+        sucss.setFont(new Font("Rockwell", Font.BOLD, 25));
+        frame.add(sucss);
+        //-----------------------------------------
+        home.homeView(id);
+        frame.setVisible(true);
+    }
 
     public void detailView(String num, String pin) {
         Commons commons = new Commons();
