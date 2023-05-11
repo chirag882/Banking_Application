@@ -114,12 +114,12 @@ public class AddUser {
     public void auto() {
         String str = "";
         for (int i = 0; i < 16; i++) {
-            str += random.nextInt(9 - 0 + 1) + 0;
+            str += random.nextInt(10) + 0;
         }
         atmField.setText(str);
         str = "";
         for (int i = 0; i < 4; i++) {
-            str += random.nextInt(9 - 0 + 1) + 0;
+            str += random.nextInt(10) + 0;
         }
         pinField.setText(str);
     }
