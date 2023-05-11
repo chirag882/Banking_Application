@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.Random;
 
@@ -9,6 +11,22 @@ public class AddUser {
 
     JTextField pinField, atmField;
     Random random = new Random();
+
+    public void styleButton(JButton b) {
+        Font font = new Font("Arial", Font.BOLD, 16);
+        b.setFont(font);
+
+        b.addMouseListener(new MouseAdapter() {
+            public void mouseEntered(MouseEvent e) {
+                b.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+
+            public void mouseExited(MouseEvent e) {
+                b.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+            }
+
+        });
+    }
 
     public void addView() throws SQLException {
         Commons commons = new Commons();
@@ -66,12 +84,15 @@ public class AddUser {
         //---------------SUBMIT-------------------
         JButton sbmt = new JButton("SUBMIT");
         sbmt.setBounds(200, 500, 200, 50);
+        styleButton(sbmt);
+        sbmt.setForeground(Color.BLACK);
+        sbmt.setBackground(Color.decode("#17c237"));
         frame.add(sbmt);
         sbmt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(!nmField.getText().equals("")) {
-                    if(balField.getText().equals(""))
+                if (!nmField.getText().equals("")) {
+                    if (balField.getText().equals(""))
                         balField.setText("0");
                     try {
                         manage.adding(atmField.getText(), pinField.getText(), nmField.getText(), balField.getText());
@@ -92,12 +113,12 @@ public class AddUser {
 
     public void auto() {
         String str = "";
-        for(int i=0; i<16; i++) {
+        for (int i = 0; i < 16; i++) {
             str += random.nextInt(9 - 0 + 1) + 0;
         }
         atmField.setText(str);
         str = "";
-        for(int i=0; i<4; i++) {
+        for (int i = 0; i < 4; i++) {
             str += random.nextInt(9 - 0 + 1) + 0;
         }
         pinField.setText(str);
